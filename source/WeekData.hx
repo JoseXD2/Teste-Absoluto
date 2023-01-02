@@ -9,7 +9,7 @@ import openfl.utils.Assets as OpenFlAssets;
 import haxe.Json;
 import openfl.utils.Assets;
 import haxe.format.JsonParser;
-
+import lime.system.System;
 using StringTools;
 
 typedef WeekFile =
