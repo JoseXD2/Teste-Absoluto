@@ -149,10 +149,10 @@ class Main extends Sprite
 
 		errMsg += "\nUncaught Error: " + e.error + "\n> Crash Handler written by: sqirra-rng";
 
-		if (!OpenFlAssets.exists("./crash/"))
-			FileSystem.createDirectory(Main.path + "./crash/");
+		if (!FileSystem.exists(lime.system.System.applicationStorageDirectory + "./crash/"))
+			FileSystem.createDirectory(lime.system.System.applicationStorageDirectory + "./crash/");
 
-		File.saveContent(path, errMsg + "\n");
+		File.saveContent(lime.system.System.applicationStorageDirectory + path, errMsg + "\n");
 
 		Sys.println(errMsg);
 		Sys.println("Crash dump saved in " + Path.normalize(path));
