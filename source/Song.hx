@@ -92,12 +92,12 @@ class Song
 		
 		var formattedFolder:String = Paths.formatToSongPath(folder);
 		var formattedSong:String = Paths.formatToSongPath(jsonInput);
-		#if windows
+		
 		var moddyFile:String = Paths.modsJson(formattedFolder + '/' + formattedSong);
 		if(HSys.exists(moddyFile)) {
 			rawJson = HSys.getContent(moddyFile).trim();
 		}
-		#end
+		
 
 		if(rawJson == null) {
 			
