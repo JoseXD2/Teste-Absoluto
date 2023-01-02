@@ -182,7 +182,7 @@ class WeekData {
 				}
 			}
 		}
-		#end
+		
 	}
 
 	private static function addWeek(weekToCheck:String, path:String, directory:String, i:Int, originalLength:Int)
