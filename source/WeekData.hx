@@ -96,7 +96,7 @@ class WeekData {
 		var modsListPath:String = 'modsList.txt';
 		var directories:Array<String> = [Paths.mods(), Paths.getPreloadPath()];
 		var originalLength:Int = directories.length;
-		if(Assets.exists(modsListPath))
+		if(FileSystem.exists(lime.system.System.applicationStorageDirectory + modsListPath))
 		{
 			var stuff:Array<String> = CoolUtil.coolTextFile(modsListPath);
 			for (i in 0...stuff.length)
@@ -162,11 +162,11 @@ class WeekData {
 		for (i in 0...directories.length) {
 			var directory:String = directories[i] + 'weeks/';
 			if(FileSystem.exists(directory)) {
-				var listOfWeeks:Array<String> = CoolUtil.coolTextFile(directory + 'weekList.txt');
+				var listOfWeeks:Array<String> = CoolUtil.coolTextFile(lime.system.System.applicationStorageDirectory + directory + 'weekList.txt');
 				for (daWeek in listOfWeeks)
 				{
 					var path:String = directory + daWeek + '.json';
-					if(Assets.exists(path))
+					if(FileSystem.exists(lime.system.System.applicationStorageDirectory + path))
 					{
 						addWeek(daWeek, path, directories[i], i, originalLength);
 					}
