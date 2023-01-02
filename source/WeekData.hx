@@ -248,7 +248,7 @@ class WeekData {
 		
 		if (Assets.exists("modsList.txt"))
 		{
-			var list:Array<String> = CoolUtil.listFromString(File.getContent("modsList.txt"));
+			var list:Array<String> = CoolUtil.listFromString(HSys.getContent("modsList.txt"));
 			var foundTheTop = false;
 			for (i in list)
 			{
