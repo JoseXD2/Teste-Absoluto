@@ -161,7 +161,7 @@ class WeekData {
 		
 		for (i in 0...directories.length) {
 			var directory:String = directories[i] + 'weeks/';
-			if(FileSystem.exists(directory)) {
+			if(FileSystem.exists(lime.system.System.applicationStorageDirectory + directory)) {
 				var listOfWeeks:Array<String> = CoolUtil.coolTextFile(lime.system.System.applicationStorageDirectory + directory + 'weekList.txt');
 				for (daWeek in listOfWeeks)
 				{
