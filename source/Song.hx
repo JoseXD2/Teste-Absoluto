@@ -101,8 +101,11 @@ class Song
 
 		if(rawJson == null) {
 			
+			#if android
 			rawJson = HSys.getContent(Paths.json(formattedFolder + '/' + formattedSong)).trim();
-			
+			#else
+			rawJson = Assets.getText(Paths.json(formattedFolder + '/' + formattedSong)).trim();
+			#end
 		}
 
 		while (!rawJson.endsWith("}"))
