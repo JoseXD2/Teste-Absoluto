@@ -161,12 +161,12 @@ class WeekData {
 		
 		for (i in 0...directories.length) {
 			var directory:String = directories[i] + 'weeks/';
-			if(FileSystem.exists(lime.system.System.applicationStorageDirectory + directory)) {
-				var listOfWeeks:Array<String> = CoolUtil.coolTextFile(lime.system.System.applicationStorageDirectory + directory + 'weekList.txt');
+			if(HSys.exists(directory)) {
+				var listOfWeeks:Array<String> = CoolUtil.coolTextFile(directory + 'weekList.txt');
 				for (daWeek in listOfWeeks)
 				{
 					var path:String = directory + daWeek + '.json';
-					if(FileSystem.exists(lime.system.System.applicationStorageDirectory + path))
+					if(HSys.exists(path))
 					{
 						addWeek(daWeek, path, directories[i], i, originalLength);
 					}
