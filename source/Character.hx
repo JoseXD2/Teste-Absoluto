@@ -128,7 +128,7 @@ class Character extends FlxSprite
 				//var modTextureToFind:String = Paths.modFolders("images/"+json.image);
 				//var textureToFind:String = Paths.getPath('images/' + json.image, new AssetType();
 				
-				if (HSys.exists(modTxtToFind) || HSys.exists(txtToFind) || Assets.exists(txtToFind))
+				if (HSys.exists(modTxtToFind) || HSys.exists(txtToFind)))
 				
 				if (Assets.exists(Paths.getPath('images/' + json.image + '.txt', TEXT)))
 				
@@ -143,7 +143,7 @@ class Character extends FlxSprite
 				//var modTextureToFind:String = Paths.modFolders("images/"+json.image);
 				//var textureToFind:String = Paths.getPath('images/' + json.image, new AssetType();
 				
-				if (HSys.exists(modAnimToFind) || HSys.exists(animToFind) || Assets.exists(animToFind))
+				if (HSys.exists(modAnimToFind) || HSys.exists(animToFind)))
 				
 				if (Assets.exists(Paths.getPath('images/' + json.image + '/Animation.json', TEXT)))
 				
