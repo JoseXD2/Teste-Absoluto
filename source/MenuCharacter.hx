@@ -64,6 +64,11 @@ class MenuCharacter extends FlxSprite
 				}
 				rawJson = HSys.getContent(path);
 
+				var path:String = Paths.getPreloadPath(characterPath);
+				if(!Assets.exists(path)) {
+					path = Paths.getPreloadPath('images/menucharacters/' + DEFAULT_CHARACTER + '.json');
+				}
+				rawJson = Assets.getText(path);
 				
 				
 				
