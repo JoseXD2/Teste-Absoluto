@@ -100,21 +100,29 @@ class Character extends FlxSprite
 				var characterPath:String = 'characters/' + curCharacter + '.json';
 
 				
+				#if MODS_ALLOWED
 				var path:String = Paths.modFolders(characterPath);
-				if (!HSys.exists(path)) {
+				if (!Assets.exists(path)) {
 					path = Paths.getPreloadPath(characterPath);
 				}
 
+				if (!Assets.exists(path))
+				#else
 				var path:String = Paths.getPreloadPath(characterPath);
 				if (!Assets.exists(path))
-				
+				#end
+					
 				{
 					path = Paths.getPreloadPath('characters/' + DEFAULT_CHARACTER + '.json'); //If a character couldn't be found, change him to BF just to prevent a crash
-				}
+				}	
 
 				
-				var rawJson = Assets.getText(path);
 				
+				#if MODS_ALLOWED
+				var rawJson = HSys.getContent(path);
+				#else
+				var rawJson = Assets.getText(path);
+				#end
 
 				var json:CharacterFile = cast Json.parse(rawJson);
 				var spriteType = "sparrow";
