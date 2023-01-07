@@ -888,6 +888,10 @@ class PlayState extends MusicBeatState
 		// STAGE SCRIPTS
 		var doPush:Bool = false;
 		var luaFile:String = 'stages/' + curStage + '.lua';
+			if(HSys.exists(Paths.modFolders(luaFile))) {
+			luaFile = Paths.modFolders(luaFile);
+			doPush = true;
+		} else {	
 			luaFile = Paths.getPreloadPath(luaFile);
 			if(OpenFlAssets.exists(luaFile)) {
 				doPush = true;
