@@ -96,7 +96,7 @@ class WeekData {
 		var modsListPath:String = 'modsList.txt';
 		var directories:Array<String> = [Paths.mods(), Paths.getPreloadPath()];
 		var originalLength:Int = directories.length;
-		if(FileSystem.exists(lime.system.System.applicationStorageDirectory + modsListPath))
+		if(Assets.exists(modsListPath))
 		{
 			var stuff:Array<String> = CoolUtil.coolTextFile(modsListPath);
 			for (i in 0...stuff.length)
@@ -110,7 +110,7 @@ class WeekData {
 				{
 					var path = haxe.io.Path.join([Paths.mods(), splitName[0]]);
 					//trace('trying to push: ' + splitName[0]);
-					if (sys.FileSystem.isDirectory(lime.system.System.applicationStorageDirectory + path) && !Paths.ignoreModFolders.contains(splitName[0]) && !disabledMods.contains(splitName[0]) && !directories.contains(path + '/'))
+					if (Assets.getText(path) && !Paths.ignoreModFolders.contains(splitName[0]) && !disabledMods.contains(splitName[0]) && !directories.contains(path + '/'))
 					{
 						directories.push(path + '/');
 						//trace('pushed Directory: ' + splitName[0]);
@@ -175,7 +175,7 @@ class WeekData {
 				for (file in HSys.readDirectory(directory))
 				{
 					var path = haxe.io.Path.join([directory, file]);
-					if (!sys.FileSystem.isDirectory(lime.system.System.applicationStorageDirectory + path) && file.endsWith('.json'))
+					if (!Assets.getText(path) && file.endsWith('.json'))
 					{
 						addWeek(file.substr(0, file.length - 5), path, directories[i], i, originalLength);
 					}
